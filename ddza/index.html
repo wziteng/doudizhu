@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,user-scalable=no,initial-scale=1.0">
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" type="text/css" href="css/baraja.css"/>
+    <link rel="stylesheet" type="text/css" href="css/demo.css"/>
+    <link rel="stylesheet" type="text/css" href="css/custom.css"/>
+    <script type="text/javascript" src="js/modernizr.custom.79639.js"></script>
+    <title>斗地主</title>
+</head>
+<style>
+    *{
+        panding:0;
+        margin: 0;
+    }
+    html,body{
+        width: 375px;
+        height: 667px;
+        overflow: hidden;
+        background: url("res/bg.png");
+    }
+    #game{
+        position: absolute;
+        background-image: url("res/bg.png");
+    }
+
+</style>
+
+<!--开始按钮绑定事件--->
+<script type="text/javascript">
+    function change() {
+        let divM = document.getElementById("bground");
+        divM.onclick = function () {
+            let divs = document.getElementsByTagName('div');  //清除div
+            for (let i =0 ;i < divs.length-1;i++) {
+                document.body.removeChild(divs[0]);
+                i--;
+            }
+
+            let JSElement = document.createElement("script");
+
+            JSElement.setAttribute("type", "module");
+
+            JSElement.setAttribute("src", "game.js");
+
+            document.body.appendChild(JSElement);
+
+        }
+
+    }
+
+</script>
+<body onload="$(function () {
+        const $el = $('#baraja-el'),
+            baraja = $el.baraja();
+            baraja.fan({
+                speed: 500,
+                easing: 'ease-out',
+                range: 120,
+                direction: 'right',
+                origin: {x: 60, y: 300},
+                center: true
+        });})">
+<div class="container">
+    <section class="main">
+        <div class="baraja-demo">
+            <ul id="baraja-el" class="baraja-container">
+                <li><img src="images/1.jpg" alt="image1"/>
+                <li><img src="images/2.jpg" alt="image2"/>
+                <li><img src="images/3.jpg" alt="image3"/>
+                <li><img src="images/4.jpg" alt="image4"/>
+                <li><img src="images/5.jpg" alt="image5"/>
+                <li><img src="images/6.jpg" alt="image6"/>
+                <li><img src="images/7.jpg" alt="image7"/>
+                <li><img src="images/8.jpg" alt="image8"/>
+                <li><img src="images/9.jpg" alt="image9"/>
+                <li><img src="images/10.jpg" alt="image10"/>
+                <li><img src="images/11.jpg" alt="image11"/>
+                <li><img src="images/12.jpg" alt="image12"/>
+                <li><img src="images/13.jpg" alt="image13"/>
+                <li><img src="images/14.jpg" alt="image14"/>
+                <li><img src="images/15.jpg" alt="image15"/>
+                <li><img src="images/16.jpg" alt="image16"/>
+                <li><img src="images/17.jpg" alt="image17"/>
+                <li><img src="images/18.jpg" alt="image18"/>
+                <li><img src="images/19.jpg" alt="image19"/>
+                <li><img src="images/20.jpg" alt="image20"/>
+                <li><img src="images/21.jpg" alt="image21"/>
+                <li><img src="images/22.jpg" alt="image22"/>
+                <li><img src="images/23.jpg" alt="image23"/>
+                <li><img src="images/24.jpg" alt="image24"/>
+                <li><img src="images/25.jpg" alt="image25"/>
+                <li><img src="images/26.jpg" alt="image26"/>
+                <li><img src="images/27.jpg" alt="image27"/>
+                <li><img src="images/28.jpg" alt="image28"/>
+                <li><img src="images/19.jpg" alt="image29"/>
+                <li><img src="images/20.jpg" alt="image30"/>
+                <li><img src="images/21.jpg" alt="image31"/>
+                <li><img src="images/22.jpg" alt="image32"/>
+                <li><img src="images/23.jpg" alt="image33"/>
+                <li><img src="images/24.jpg" alt="image34"/>
+                <li><img src="images/25.jpg" alt="image35"/>
+                <li><img src="images/26.jpg" alt="image36"/>
+                <li><img src="images/27.jpg" alt="image37"/>
+                <li><img src="images/28.jpg" alt="image38"/>
+                <li><img src="images/29.jpg" alt="image39"/>
+                <li><img src="images/30.jpg" alt="image40"/>
+                <li><img src="images/31.jpg" alt="image41"/>
+                <li><img src="images/32.jpg" alt="image42"/>
+            </ul>
+        </div>
+    </section>
+</div>
+
+<!--开始界面的logo和button-->
+<div id="startGame">
+    <div id="logo">
+        <img src="res/logo.png">
+    </div>
+    <div id="bground" onclick="change()">
+        <div id="value" >
+            <!--<script type="module" src="game.js"></script>-->
+        </div>
+    </div>
+</div>
+
+        <canvas id="game_canvas"  width="375" height="667"></canvas>
+
+<script type="text/javascript" src="js/jquery-1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.baraja.js"></script>
+</body>
+</html>
